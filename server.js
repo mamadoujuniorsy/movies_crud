@@ -1,11 +1,11 @@
 const express = require("express");
-const router = require("./routes/student.routes")
+const router = require("./routes/movie.routes")
 const app = express();
 app.use(express.json())
-app.use("/api/students", router);
+app.use("/api/movies", router);
 const logger = require("morgan");
 
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 8900;
 
 const db = require("./models");
 
@@ -24,7 +24,7 @@ db.mongoose
 app.use(logger("dev"));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to glsi students application." });
+  res.json({ message: "Welcome to glsi movies application." });
 });
 
 app.listen(PORT, () => {
